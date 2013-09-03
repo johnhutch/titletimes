@@ -3,6 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
+gem 'rspec-rails', :group => [:development, :test]
+gem 'factory_girl_rails', :group => [:development, :test]
+gem 'database_cleaner', :group => :test
+gem 'email_spec', :group => :test
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
