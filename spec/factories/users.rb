@@ -1,6 +1,7 @@
 FactoryGirl.define do
+  
   factory :user do
-    name '#{Random.firstname} #{Random.lastname}'
+    name "Bob Loblaw" 
     email 'okayokay@gmail.com'
     password 'changeme'
     password_confirmation 'changeme'
@@ -8,4 +9,5 @@ FactoryGirl.define do
     # Devise's confirmable is turned on
     confirmed_at = Time.now
   end
+
 end
