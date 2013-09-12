@@ -1,0 +1,35 @@
+<h1>Listing titletimes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Hour</th>
+      <th>Minute</th>
+      <th>Second</th>
+      <th>Cheese</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @titletimes.each do |titletime| %>
+      <tr>
+        <td><%= titletime.movie %></td>
+        <td><%= titletime.hour %></td>
+        <td><%= titletime.minute %></td>
+        <td><%= titletime.second %></td>
+        <td><%= titletime.cheese %></td>
+        <td><%= link_to 'Show', titletime %></td>
+        <td><%= link_to 'Edit', edit_titletime_path(titletime) %></td>
+        <td><%= link_to 'Destroy', titletime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Titletime', new_titletime_path %>

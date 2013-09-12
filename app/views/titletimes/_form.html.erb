@@ -1,0 +1,37 @@
+<%= form_for(@titletime) do |f| %>
+  <% if @titletime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@titletime.errors.count, "error") %> prohibited this titletime from being saved:</h2>
+
+      <ul>
+      <% @titletime.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :movie %><br>
+    <%= f.text_field :movie %>
+  </div>
+  <div class="field">
+    <%= f.label :hour %><br>
+    <%= f.number_field :hour %>
+  </div>
+  <div class="field">
+    <%= f.label :minute %><br>
+    <%= f.number_field :minute %>
+  </div>
+  <div class="field">
+    <%= f.label :second %><br>
+    <%= f.number_field :second %>
+  </div>
+  <div class="field">
+    <%= f.label :cheese %><br>
+    <%= f.check_box :cheese %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

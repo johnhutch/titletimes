@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @titletime.movie %>
+</p>
+
+<p>
+  <strong>Hour:</strong>
+  <%= @titletime.hour %>
+</p>
+
+<p>
+  <strong>Minute:</strong>
+  <%= @titletime.minute %>
+</p>
+
+<p>
+  <strong>Second:</strong>
+  <%= @titletime.second %>
+</p>
+
+<p>
+  <strong>Cheese:</strong>
+  <%= @titletime.cheese %>
+</p>
+
+<%= link_to 'Edit', edit_titletime_path(@titletime) %> |
+<%= link_to 'Back', titletimes_path %>
