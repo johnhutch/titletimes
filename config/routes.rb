@@ -1,4 +1,5 @@
 Titletimes::Application.routes.draw do
+  root 'titletimes#index'
   resources :titletimes
 
   # The priority is based upon order of creation: first created -> highest priority.

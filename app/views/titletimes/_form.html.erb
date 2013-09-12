@@ -1,6 +1,6 @@
 <%= form_for(@titletime) do |f| %>
   <% if @titletime.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="label label-warning">
       <h2><%= pluralize(@titletime.errors.count, "error") %> prohibited this titletime from being saved:</h2>
 
       <ul>
@@ -32,6 +32,6 @@
     <%= f.check_box :cheese %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Title Time", class: "btn btn-default" %>
   </div>
 <% end %>
