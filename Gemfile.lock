@@ -175,7 +175,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
-  devise
+  devise (= 3.0.0.rc)
   email_spec
   factory_girl_rails
   guard-rspec
