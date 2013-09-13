@@ -1,4 +1,5 @@
 Titletimes::Application.routes.draw do
+  devise_for :users
   root 'titletimes#index'
   resources :titletimes
 

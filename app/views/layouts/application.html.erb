@@ -11,6 +11,13 @@
 <%= render "shared/menu" %>
 
 <div class="container">
+  <% if notice %>
+    <p class="text-warning"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="text-danger"><%= alert %></p>
+  <% end %>
+
   <%= yield %>
 </div>
 

@@ -1,4 +1,5 @@
 class TitletimesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_titletime, only: [:show, :edit, :update, :destroy]
 
   # GET /titletimes

@@ -18,6 +18,7 @@ describe User do
   it "should have a name" do
     user_with_no_name = User.new(@attr.merge(:email => ""))
     user_with_no_name.should_not be_valid
+  end
 
   it "should require an email address" do 
     # Create a user that has an empty email address
@@ -103,20 +104,4 @@ describe User do
       @user.encrypted_password.should_not be_blank
     end
   end
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
