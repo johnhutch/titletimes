@@ -1,5 +1,4 @@
-FactoryGirl.define do
-  
+FactoryGirl.define do  
   factory :user do
     name "Bob Loblaw" 
     email 'okayokay@gmail.com'
@@ -9,5 +8,4 @@ FactoryGirl.define do
     # Devise's confirmable is turned on
     confirmed_at = Time.now
   end
-
 end
