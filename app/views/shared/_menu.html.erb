@@ -1,8 +1,18 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <a class="navbar-brand pull-left" href="<%= root_path %>">Title Times</a>
-    <div class="navbar-right">
-      <a class="btn btn-default navbar-btn" href="<% user_session_path %>">Login&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
+    <div class="navbar-right pull-right">
+
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, :method => :delete, :class => "btn btn-default navbar-btn" do %>
+        Logout&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_session_path, :class => "btn btn-default navbar-btn" do %>
+        Login&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span>
+      <% end %>
+    <% end %>
+
       <a class="btn btn-default navbar-btn" href="<%= new_titletime_path %>">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span></a>
     </div>
   </div>
