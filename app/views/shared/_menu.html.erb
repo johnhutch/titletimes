@@ -4,16 +4,21 @@
     <div class="navbar-right pull-right">
 
     <% if user_signed_in? %>
+    <% # If user is signed in, show a button to add a Titletime and a button to log out %>
+      <%= link_to new_titletime_path, :class => "btn btn-default navbar-btn" do %>
+        Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span>
+      <% end %
       <%= link_to destroy_user_session_path, :method => :delete, :class => "btn btn-default navbar-btn" do %>
         Logout&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span>
       <% end %>
     <% else %>
+
+    <% # Otherwise, only show a button to log in %>
       <%= link_to new_user_session_path, :class => "btn btn-default navbar-btn" do %>
         Login&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span>
       <% end %>
     <% end %>
 
-      <a class="btn btn-default navbar-btn" href="<%= new_titletime_path %>">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span></a>
     </div>
   </div>
 </nav>
