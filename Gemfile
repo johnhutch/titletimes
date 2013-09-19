@@ -35,15 +35,17 @@ end
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'sqlite3'
 end
 
 group :test do
+  gem 'faker'
   gem 'capybara'
-  gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'database_cleaner'
   gem 'email_spec'
+  gem 'selenium-webdriver'
 end
 
 # Use ActiveModel has_secure_password
