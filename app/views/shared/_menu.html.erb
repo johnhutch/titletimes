@@ -1,6 +1,9 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
-    <a class="navbar-brand" href="<%= root_path %>">Title Times</a>
-    <a class="pull-right btn btn-default add-btn" href="<%= new_titletime_path %>"><span class="glyphicon glyphicon-plus"></span></a>
+    <a class="navbar-brand pull-left" href="<%= root_path %>">Title Times</a>
+    <div class="navbar-right">
+      <a class="btn btn-default navbar-btn" href="<% user_session_path %>">Login&nbsp;&nbsp;<span class="glyphicon glyphicon-log-in"></span></a>
+      <a class="btn btn-default navbar-btn" href="<%= new_titletime_path %>">Add&nbsp;&nbsp;<span class="glyphicon glyphicon-plus"></span></a>
+    </div>
   </div>
 </nav>

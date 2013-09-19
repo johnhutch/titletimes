@@ -11,5 +11,6 @@
 *= require_self
 *= require bootstrap
 */
-.add-btn {
-  margin-top: 7px; }
+.navbar-brand {
+  float: none;
+  margin: 0 auto; }
