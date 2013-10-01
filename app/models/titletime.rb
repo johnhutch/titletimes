@@ -4,7 +4,6 @@ class Titletime < ActiveRecord::Base
   validates :hour,   presence: true, numericality: { only_integer: true, greater_than: -1 }
   validates :minute, presence: true, numericality: { only_integer: true, greater_than: -1, less_than: 60 }
   validates :second, presence: true, numericality: { only_integer: true, greater_than: -1, less_than: 60 }
-  validates :cheese, presence: true
 
   def string_with_lead_zero (num)
   # Returns number as a string

@@ -1,9 +1,40 @@
 require 'spec_helper'
 
 describe User do
-  it "is invalid with a duplicate email address" do
-    User.create(username: "Tester", email: "test@test.com", password: "password", password_confirmation: "password")
-    newuser = User.new(username: "Other", email: "test@test.com", password: "password", password_confirmation: "password")
-    expect(newuser).to have(2).errors_on(:email)
+  it "has a valid factory" do
+    expect(create(:user)).to be_valid
+  end
+
+  context "existence of attributes" do
+    it "is valid with a username, email, and password" do
+      expect(build(:user)).to be_valid
+    end
+    it "is invalid without a username" do
+      user = build(:user, username: nil)
+      expect(user).to have(1).errors_on(:username)
+    end
+    it "is invalid without an email" do
+      user = build(:user, email: nil)
+      expect(user).to have(2).errors_on(:email)
+    end
+    it "is invalid without password" do
+      user = build(:user, password: nil)
+      expect(user).to have(3).errors_on(:password)
+    end
+  end
+
+  context "password requirements" do
+    it "is invalid with password less than 8 characters" do
+      user = build(:user, password: "nope")
+      expect(user).to have(2).errors_on(:password)
+    end
+  end
+
+  context "email requirements" do
+    it "is invalid with a duplicate email address" do
+      create(:user, email: "test@test.com") # This user persists in the db
+      user = build(:user, email: "test@test.com")
+      expect(user).to have(2).errors_on(:email)
+    end
   end
 end
