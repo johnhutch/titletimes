@@ -43,7 +43,7 @@ group :test do
   gem 'faker'
   gem 'capybara'
   gem 'guard-rspec'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '= 1.0.1'
   gem 'email_spec'
   gem 'selenium-webdriver'
 end

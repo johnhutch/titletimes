@@ -16,3 +16,4 @@ Only an admin can sign people up at the site
 Admin can destroy any Titletimes
 Users can only edit/destroy Titletimes that they made
 Cannot add a second Titletime for the same movie
+User can log in with username or email
