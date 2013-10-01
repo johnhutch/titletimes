@@ -21,6 +21,9 @@ describe User do
       user = build(:user, password: nil)
       expect(user).to have(3).errors_on(:password)
     end
+    it "has three titletimes attached to it" do
+      expect(create(:user).titletimes.count).to eq 3
+    end
   end
 
   context "password requirements" do

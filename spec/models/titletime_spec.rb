@@ -6,7 +6,7 @@ require 'spec_helper'
 
 describe Titletime do
   context "existence of parts" do
-    it "is valid with movie name, an hour/minute/second, and cheese factor" do
+    it "is valid with movie name, an hour/minute/second, cheese factor, and user owner" do
       titletime = build(:titletime)
       expect(titletime).to be_valid
     end
@@ -34,28 +34,28 @@ describe Titletime do
 
   context "possible titletime number value problems" do
     it "is invalid if the hour is negative" do
-      expect(Titletime.new(hour: -2)).to have(1).errors_on(:hour)
+      expect(build(:titletime, hour: -2)).to have(1).errors_on(:hour)
     end
     it "is invalid if the minute is negative" do
-      expect(Titletime.new(minute: -43)).to have(1).errors_on(:minute)
+      expect(build(:titletime, minute: -43)).to have(1).errors_on(:minute)
     end
     it "is invalid if the second is negative" do
-      expect(Titletime.new(second: -14)).to have(1).errors_on(:second)
+      expect(build(:titletime, second: -14)).to have(1).errors_on(:second)
     end
     it "is invalid if the minute exceeds 59" do
-      expect(Titletime.new(minute: 60)).to have(1).errors_on(:minute)
+      expect(build(:titletime, minute: 60)).to have(1).errors_on(:minute)
     end
     it "is invalid if the second exceeds 59" do
-      expect(Titletime.new(second: 60)).to have(1).errors_on(:second)
+      expect(build(:titletime, second: 60)).to have(1).errors_on(:second)
     end
   end
 
   describe "combine parts of titletime" do
     before :each do
-      @amelietime = Titletime.new(movie: "Amelie", hour: 1, minute: 6, second: 9, cheese: true)
+      @early_titletime = create(:early_titletime)
     end
     it "returns a titletime with hour, minute, and second combined" do
-      expect(@amelietime.full_time).to eq "01:06:09"
+      expect(@early_titletime.full_time).to eq "00:04:09"
     end
   end
 end
