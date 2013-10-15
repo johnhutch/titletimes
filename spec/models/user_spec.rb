@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe User do
+
   it "has a valid factory" do
     expect(create(:user)).to be_valid
   end
@@ -40,4 +41,5 @@ describe User do
       expect(user).to have(2).errors_on(:email)
     end
   end
+
 end

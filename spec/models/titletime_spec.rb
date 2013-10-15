@@ -5,6 +5,7 @@
 require 'spec_helper'
 
 describe Titletime do
+
   context "existence of parts" do
     it "is valid with movie name, an hour/minute/second, cheese factor, and user owner" do
       titletime = build(:titletime)
@@ -26,6 +27,7 @@ describe Titletime do
 
   context "duplication of entries" do
     it "is invalid with a duplicate movie name" do
+      # create saves, build does not save
       titletime1 = create(:titletime)
       titletime2 = build(:titletime, movie: titletime1.movie)
       expect(titletime2).to have(1).errors_on(:movie)
@@ -58,4 +60,5 @@ describe Titletime do
       expect(@early_titletime.full_time).to eq "00:04:09"
     end
   end
+
 end
